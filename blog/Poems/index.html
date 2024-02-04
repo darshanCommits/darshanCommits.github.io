@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Poems</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../index.css">
+</head>
+<body>
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
+  <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+  <div id="background_overlay"></div>
+  <div id="background" style="background: url(top_image.png) center;"></div>
+  <table id="profile_blog">
+    <tbody>
+      <tr>
+        <td style="width:8vw;">
+          <div id="profile_img_blog"></div>
+        </td>
+        <td style="width:52vw;">
+          <div id="username_blog"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <article id="blog-display">
+    <div id="blog">
+      <h1>Poems</h1>
+      <section>
+        <h2 class="accordion-heading">1. Echoes of the Strong.</h2>
+        <div class="accordion-content">
+          <p>
+            En masse they came, Alone they went.
+            <br>
+            Thought they thorough, Throughout they thought.
+            <br>
+            Alone they died, En masse they cried.
+            <br>
+          </p>
+          <p>
+            The powerless showered them accusation.
+            <br>
+            The mighty countered them justification.
+            <br>
+            The weak had a side.
+            <br>
+            The strong had a side.
+            <br>
+            The rest sighed all night to what they called an ironic sight.
+            <br>
+            History was written.
+            <br>
+            Weak was despised,
+            <br>
+            With ceasing existence,
+            <br>
+          </p>
+          <p>
+            Alone they had cried.
+            <br>
+            The strong echoed the world.
+            <br>
+            The world echoed the strong,
+            <br>
+            <strong>Who is strong.</strong>
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="accordion-heading">2. The Aimless Chimeras.</h2>
+        <div class="accordion-content">
+          <p>
+            Lost in the labyrinth's din, <br>
+            Sighing the elusive sins within.
+            <br>
+            <br>
+            Mental health rants, with grass left untouched. <br>
+            Worldly issues eyed, thy vicinal rhymes dried.
+            <br>
+            <br>
+            Connections sought in digital haze, <br>
+            Meaningful bonds lost in the craze.
+            <br>
+            <br>
+            Individualist liquors, attention they seek <br>
+            Loneliness lingers, where crowds may peek.
+            <br>
+            <br>
+            Clinging to hope their minds won't mold
+            <br>
+            While reality continues to go its own accord.
+            <br>
+            <br>
+            Vision veiled in the trend's embrace,
+            <br>
+            Life as a race, truly an unending chase.
+            <br>
+            <br>
+            Each now a ghost, like Schrodinger's lore. <br>
+            Thou art observer of all this शोर.
+            <br>
+            Of collapsing possibilities and all might-have-beens.
+            <br>
+            <br>
+            Deluded in narratives they self-devised
+            <br>
+            Blind is world as it truly lies
+            <br>
+          </p>
+        </div>
+      </section>
+      <section class="hindi">
+        <h2 class="accordion-heading">3. अधूरी उड़ान।</h2>
+        <div class="accordion-content">
+          <p>
+            भूल मत वीरे,<br>
+            तू चल पड़ा था उन आसमा को छूने।<br>
+            <br>
+            न जाने तक़दीर कब ये रूप लाई।<br>
+            आसमा क्या, मिट्टी ही तुझे समझ पाई।<br>
+            <br>
+            मलबे उन लम्हों के,<br>
+            ना चाहकर रोज़ तुझे सताते हैं।<br>
+            <br>
+            पता नही, जाने में हो या अनजाने में,<br>
+            हर शाम तुझे वो लम्हे तन्हा छोड़ जाते है।<br>
+            <br>
+            भूल मत वीरे,<br>
+            तू चल पड़ा था उन आसमा को छूने।    
+          </p>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <footer id="footer_blog">
+    <a href="https://github.com/imfunniee" target="_blank">Love From Open Source❤️</a>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+
+      setTimeout(function() {
+              document.getElementById("loading").classList.add("animated");
+              document.getElementById("loading").classList.add("fadeOut");
+              setTimeout(function() {
+                document.getElementById("loading").classList.remove("animated");
+                document.getElementById("loading").classList.remove("fadeOut");
+                document.getElementById("loading").style.display = "none";
+              }, 800);
+            }, 1500);
+            $.getJSON("../../config.json", function(user) {
+              var icon = document.createElement("link");
+              icon.setAttribute("rel", "icon");
+              icon.setAttribute("href", user[0].userimg);
+              icon.setAttribute("type", "image/png");
+              document.getElementsByTagName("head")[0].appendChild(icon);
+              document.getElementById(
+                "profile_img_blog"
+              ).style.background = `url('${user[0].userimg}') center center`;
+              document.getElementById(
+                "username_blog"
+              ).innerHTML = `<span style="display:${
+                user[0].name == null || !user[0].name ? "none" : "block"
+              };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+            
+              if ((user[0].theme = "dark.css")) {
+                document.querySelector("#background_overlay").style.background =
+                  "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+              } else {
+                document.querySelector("#background_overlay").style.background =
+                  "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+              }
+            });
+
+     $(document).ready(function(){
+          $('.accordion-heading').click(function(){
+            $(this).next('.accordion-content').slideToggle();
+          });
+        });
+               
+    </script>
+</body>
+</html>

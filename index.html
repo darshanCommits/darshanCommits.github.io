@@ -213,12 +213,12 @@
         <div class="projects" id="forks_section"></div>
       </div>
       <div id="blog_section">
-        <h1>Blog.</h1>
+        <h1>Blogs.</h1>
         <div id="blogs"></div>
       </div>
 
       <div id="footer">
-        <a href="https://github.com/imfunniee" target="_blank">made on earth by a human</a>
+        <a href="https://github.com/imfunniee" target="_blank">Love From Open Source❤️</a>
       </div>
     </div>
     <script type="text/javascript">
@@ -231,6 +231,7 @@
           document.getElementById("loading").style.display = "none";
         }, 800);
       }, 1500);
+
       $.getJSON("blog.json", function(blog) {
         blog = blog || [];
         if (blog.length == 0) {
@@ -241,7 +242,6 @@
           $("#blogs").append(`
             <a href="./blog/${blog[i].url_title}/" target="_blank">
                 <section>
-                    <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
                     <div class="blog_container">
                         <div class="section_title">${blog[i].title}</div>
                         <div class="about_section">
@@ -255,6 +255,7 @@
       }).fail(function() {
         return (document.getElementById("blog_section").style.display = "none");
       });
+
     </script>
 
     <script>
